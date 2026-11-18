@@ -1,12 +1,12 @@
 import { type } from 'arktype';
 import { assert } from '../util';
 
-const date = type("string.date");
+const date = type('string.date');
 
 const state = type({
     dates: date.array(),
     index: 'number',
-    current: date.or("null"),
+    current: date.or('null'),
     canGoBack: 'boolean',
     canGoForward: 'boolean'
 });
@@ -19,9 +19,8 @@ export function assertState(value: any): State {
 }
 
 export function createState(dates: Date[], index: number): State {
-    const _dates = dates.map(d => assert(d, date));
-    const current: Date | null =
-        index < 0 || index >= _dates.length ? null : _dates[ index ];
+    const _dates = dates.map((d) => assert(d, date));
+    const current: Date | null = index < 0 || index >= _dates.length ? null : _dates[index];
     const canGoBack = index > 0;
     const canGoForward = index < _dates.length - 1;
 
