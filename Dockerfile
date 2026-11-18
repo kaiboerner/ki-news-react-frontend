@@ -4,7 +4,9 @@ COPY package*.json ./
 RUN npm ci
 RUN npm audit --omit=dev
 COPY . .
-RUN npm run build
+ARG VITE_API_URL
+RUN : "${VITE_API_URL:?VITE_API_URL muss als Build-Argument gesetzt sein}" \
+    && npm run build
 
 FROM nginx:stable-alpine AS production
 COPY --from=builder /app/dist /usr/share/nginx/html
