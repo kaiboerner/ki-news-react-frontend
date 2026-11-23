@@ -1,5 +1,5 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { type State, createState, type Date } from './types';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { type Date, type State, createState } from './types';
 
 const slice = createSlice({
     name: 'pagination',

@@ -1,12 +1,8 @@
 import { type } from 'arktype';
 import { assert } from '../util';
-import { assertDate, type Date, date } from './Date';
+import { type Date, assertDate, date } from './Date';
 
-const state = type({
-    dates: date.array(),
-    index: 'number | null',
-    current: date.or('null')
-});
+const state = type({ dates: date.array(), index: 'number | null', current: date.or('null') });
 
 export type State = typeof state.infer;
 
@@ -19,7 +15,7 @@ export function createState(dates: Date[], index: number | null): State {
     const _dates = dates.map(assertDate);
     let _index = _dates.length ? Math.max(0, index ?? 0) : null;
 
-    const current: Date | null = _index === null || _index >= _dates.length ? null : _dates[ _index ];
+    const current: Date | null = _index === null || _index >= _dates.length ? null : _dates[_index];
 
     return assertState({ dates: _dates, index: _index, current });
 }

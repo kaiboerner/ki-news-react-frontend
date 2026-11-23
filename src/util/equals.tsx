@@ -16,18 +16,18 @@ export function equals(v1: any, v2: any): boolean {
 
 function equalsArray(v1: any[], v2: any): boolean {
     if (!Array.isArray(v2)) {
-        return false
+        return false;
     }
     if (v1.length !== v2.length) {
         return false;
     }
     for (const i in v1) {
-        if (!equals(v1[ i ], v2[ i ])) {
-            return false
+        if (!equals(v1[i], v2[i])) {
+            return false;
         }
     }
 
-    return true
+    return true;
 }
 
 function equalsObject(v1: any, v2: any): boolean {
@@ -38,10 +38,10 @@ function equalsObject(v1: any, v2: any): boolean {
     let i: keyof typeof v1;
     for (i in v1) {
         if (!Object.hasOwn(v2, i)) {
-            return false
+            return false;
         }
-        const vv1 = v1[ i ];
-        const vv2 = v2[ i ];
+        const vv1 = v1[i];
+        const vv2 = v2[i];
         if (!equals(vv1, vv2)) {
             return false;
         }

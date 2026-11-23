@@ -1,4 +1,4 @@
-import { type Date as AppDate } from '../types'
+import { type Date as AppDate } from '../types';
 
 export function dateFormat(date: AppDate): string {
     const _date = new Date(date);

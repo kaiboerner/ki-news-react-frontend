@@ -7,9 +7,9 @@ export const newsEntry = type({
     headline: 'string',
     content: 'string',
     summary: 'string'
-})
+});
 
-export type NewsEntry = typeof newsEntry.infer
+export type NewsEntry = typeof newsEntry.infer;
 
 export function assertNewsEntry(value: Partial<NewsEntry>): NewsEntry;
 export function assertNewsEntry(value: any): NewsEntry {

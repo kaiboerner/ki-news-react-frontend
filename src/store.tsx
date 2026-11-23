@@ -1,19 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/query/react'
-import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import { api } from './api'
-import paginationReducer from './slice'
+import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query/react';
+import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { api } from './api';
+import paginationReducer from './slice';
 
 export const store = configureStore({
-    reducer: {
-        [ api.reducerPath ]: api.reducer,
-        pagination: paginationReducer
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(api.middleware),
-})
+    reducer: { [api.reducerPath]: api.reducer, pagination: paginationReducer },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware)
+});
 
-setupListeners(store.dispatch)
+setupListeners(store.dispatch);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
