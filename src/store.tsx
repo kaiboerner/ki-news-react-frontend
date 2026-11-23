@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query/react'
+import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { api } from './api'
 import paginationReducer from './slice'
 
@@ -20,3 +21,6 @@ export type AppDispatch = typeof store.dispatch;
 export function getState(): RootState {
     return store.getState();
 }
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useAppDispatch: () => AppDispatch = useDispatch;
