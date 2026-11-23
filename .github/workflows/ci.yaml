@@ -28,7 +28,11 @@ jobs:
         run: npm run format:check
         
       - name: Build
-        run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+        run: |
+          : "${VITE_API_URL:?VITE_API_URL fehlt}"
+          npm run build
 
       - name: Upload dist artifact
         uses: actions/upload-artifact@v7
