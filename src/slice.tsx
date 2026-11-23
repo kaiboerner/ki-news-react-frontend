@@ -9,7 +9,7 @@ const slice = createSlice({
         previous: (state) => createState(state.dates, (state.index ?? 0) - 1),
         next: (state) => createState(state.dates, (state.index ?? 0) + 1),
         last: (state) => createState(state.dates, state.dates.length - 1),
-        setDates: (_, action: PayloadAction<Date[]>) => createState(action.payload, 0)
+        setDates: (state, action: PayloadAction<Date[]>) => createState(action.payload, state.index)
     }
 });
 
