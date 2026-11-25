@@ -19,14 +19,18 @@ export default () => {
     void data;
 
     if (date === null || (isFetching && !isSuccess)) {
-        return <Loading />
+        return <Loading />;
     }
 
     if (isError) {
-        return <Error />
+        return <Error />;
     }
 
-    return <div className='accordion' id="accordion-ki-news">
-        { data?.map((item) => <NewsItem news={ item } parentId='accordion-ki-news' />) }
-    </div>
-}
+    return (
+        <div className="accordion" id="accordion-ki-news">
+            {data?.map((item) => (
+                <NewsItem news={item} parentId="accordion-ki-news" />
+            ))}
+        </div>
+    );
+};

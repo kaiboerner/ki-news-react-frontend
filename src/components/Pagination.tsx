@@ -35,9 +35,9 @@ export default () => {
             <li className="page-item">
                 <a
                     className="page-link"
-                    onClick={ () => {
+                    onClick={() => {
                         dispatch(first());
-                    } }
+                    }}
                 >
                     <i className="bi bi-skip-start"></i>
                 </a>
@@ -51,9 +51,9 @@ export default () => {
             <li className="page-item">
                 <a
                     className="page-link"
-                    onClick={ () => {
+                    onClick={() => {
                         dispatch(previous());
-                    } }
+                    }}
                 >
                     <i className="bi bi-skip-backward"></i>
                 </a>
@@ -63,16 +63,16 @@ export default () => {
         );
 
     const currentDate = state.current ? dateFormat(state.current) : '';
-    const current = <li className="page-item disabled">{ currentDate }</li>;
+    const current = <li className="page-item disabled">{currentDate}</li>;
 
     const btnNext =
         index !== null && index < length - 1 ? (
             <li className="page-item">
                 <a
                     className="page-link"
-                    onClick={ () => {
+                    onClick={() => {
                         dispatch(next());
-                    } }
+                    }}
                 >
                     <i className="bi bi-skip-forward"></i>
                 </a>
@@ -86,9 +86,9 @@ export default () => {
             <li className="page-item">
                 <a
                     className="page-link"
-                    onClick={ () => {
+                    onClick={() => {
                         dispatch(last());
-                    } }
+                    }}
                 >
                     <i className="bi bi-skip-end"></i>
                 </a>
@@ -100,11 +100,11 @@ export default () => {
     return (
         <nav aria-label="pagination">
             <ul className="pagination">
-                { btnFirst }
-                { btnPrev }
-                { current }
-                { btnNext }
-                { btnLast }
+                {btnFirst}
+                {btnPrev}
+                {current}
+                {btnNext}
+                {btnLast}
             </ul>
         </nav>
     );
