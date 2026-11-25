@@ -39,7 +39,7 @@ export default () => {
                         dispatch(first());
                     } }
                 >
-                    <img src="/assets/icons/first.svg" alt="first" />
+                    <i className="bi bi-skip-start"></i>
                 </a>
             </li>
         ) : (
@@ -55,7 +55,7 @@ export default () => {
                         dispatch(previous());
                     } }
                 >
-                    <img src="/assets/icons/backward.svg" alt="backward" />
+                    <i className="bi bi-skip-backward"></i>
                 </a>
             </li>
         ) : (
@@ -74,7 +74,7 @@ export default () => {
                         dispatch(next());
                     } }
                 >
-                    <img src="/assets/icons/forward.svg" alt="forward" />
+                    <i className="bi bi-skip-forward"></i>
                 </a>
             </li>
         ) : (
@@ -90,7 +90,7 @@ export default () => {
                         dispatch(last());
                     } }
                 >
-                    <img src="/assets/icons/last.svg" alt="last" />
+                    <i className="bi bi-skip-end"></i>
                 </a>
             </li>
         ) : (
