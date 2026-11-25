@@ -35,11 +35,11 @@ export default () => {
             <li className="page-item">
                 <a
                     className="page-link"
-                    onClick={() => {
+                    onClick={ () => {
                         dispatch(first());
-                    }}
+                    } }
                 >
-                    <img src="/icons/first.svg" alt="first" />
+                    <img src="/assets/first.svg" alt="first" />
                 </a>
             </li>
         ) : (
@@ -51,11 +51,11 @@ export default () => {
             <li className="page-item">
                 <a
                     className="page-link"
-                    onClick={() => {
+                    onClick={ () => {
                         dispatch(previous());
-                    }}
+                    } }
                 >
-                    <img src="/icons/backward.svg" alt="backward" />
+                    <img src="/assets/backward.svg" alt="backward" />
                 </a>
             </li>
         ) : (
@@ -63,18 +63,18 @@ export default () => {
         );
 
     const currentDate = state.current ? dateFormat(state.current) : '';
-    const current = <li className="page-item disabled">{currentDate}</li>;
+    const current = <li className="page-item disabled">{ currentDate }</li>;
 
     const btnNext =
         index !== null && index < length - 1 ? (
             <li className="page-item">
                 <a
                     className="page-link"
-                    onClick={() => {
+                    onClick={ () => {
                         dispatch(next());
-                    }}
+                    } }
                 >
-                    <img src="/icons/forward.svg" alt="forward" />
+                    <img src="/assets/forward.svg" alt="forward" />
                 </a>
             </li>
         ) : (
@@ -86,11 +86,11 @@ export default () => {
             <li className="page-item">
                 <a
                     className="page-link"
-                    onClick={() => {
+                    onClick={ () => {
                         dispatch(last());
-                    }}
+                    } }
                 >
-                    <img src="/icons/last.svg" alt="last" />
+                    <img src="/assets/last.svg" alt="last" />
                 </a>
             </li>
         ) : (
@@ -100,11 +100,11 @@ export default () => {
     return (
         <nav aria-label="pagination">
             <ul className="pagination">
-                {btnFirst}
-                {btnPrev}
-                {current}
-                {btnNext}
-                {btnLast}
+                { btnFirst }
+                { btnPrev }
+                { current }
+                { btnNext }
+                { btnLast }
             </ul>
         </nav>
     );
